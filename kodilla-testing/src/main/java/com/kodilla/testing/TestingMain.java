@@ -10,7 +10,7 @@ public class TestingMain {
         String result = simpleUser.getUsername();
 
         if (result.equals("theForumUser")) {
-            System.out.println("test OK");
+            System.out.println("test OK, ok");
         } else {
             System.out.println("Error!");
         }
