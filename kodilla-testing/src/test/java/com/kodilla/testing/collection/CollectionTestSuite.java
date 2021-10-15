@@ -35,14 +35,15 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList() {
         //Given
         ArrayList<Integer> numbers = new ArrayList<>();
-
-        //When
         boolean result;
-        result = numbers.isEmpty();
-        boolean expectedResult = true;
-        //Then
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         exterminator.exterminate(numbers);
+        boolean expectedResult = true;
+
+        //When
+        result = numbers.isEmpty();
+
+        //Then
 
         Assertions.assertTrue(result);
     }
@@ -63,10 +64,10 @@ public class CollectionTestSuite {
         }
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         exterminator.exterminate(numbers);
+        boolean expectedResult2 = true;
 
         //When
         boolean result2 = even.isEmpty();
-        boolean expectedResult2 = true;
 
         //Then
         Assertions.assertTrue(result2 = true);
