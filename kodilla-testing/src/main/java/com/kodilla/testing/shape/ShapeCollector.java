@@ -13,12 +13,16 @@ public class ShapeCollector {
 
     List<Shape> shapeCollection = new ArrayList<Shape>();
 
+    public ShapeCollector(List<Shape> shapeCollection) {
+        this.shapeCollection = shapeCollection;
+    }
+
     public void addFigure() {
         shapeCollection.add(this.shape);
         System.out.println(this.shape);
     }
 
-    public void removeFigure() {
+    public void removeFigure(List<Shape> shapeCollection) {
         shapeCollection.remove(this.shape);
         System.out.println(this.shape);
     }
