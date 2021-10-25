@@ -1,2 +1,4 @@
-package com.kodilla.stream.world;public class WorldTestSuite {
+package com.kodilla.stream.world;
+
+public class WorldTestSuite {
 }

@@ -1,2 +1,4 @@
-package com.kodilla.stream.world;public class Country {
+package com.kodilla.stream.world;
+
+public class Country {
 }
