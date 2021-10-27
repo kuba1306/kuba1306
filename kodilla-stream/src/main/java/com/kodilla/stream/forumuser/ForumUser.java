@@ -1,18 +1,19 @@
 package com.kodilla.stream.forumuser;
 
-public final class ForumUser {
+import java.time.LocalDate;
 
+public final class ForumUser {
     private final int id;
     private final String name;
     private final char gender;
-    private final int age;
+    private LocalDate dateOfBirth;
     private final int postsNumber;
 
-    public ForumUser(final int id, final String name, final char gender, final int age, final int postsNumber) {
+    public ForumUser(final int id, final String name, final char gender, final LocalDate dateOfBirth, final int postsNumber) {
         this.id = id;
         this.name = name;
         this.gender = gender;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.postsNumber = postsNumber;
     }
 
@@ -28,8 +29,8 @@ public final class ForumUser {
         return gender;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public int getPostsNumber() {
@@ -42,7 +43,7 @@ public final class ForumUser {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", gender=" + gender +
-                ", age=" + age +
+                ", dateOfBirth=" + dateOfBirth +
                 ", postsNumber=" + postsNumber +
                 '}';
     }
