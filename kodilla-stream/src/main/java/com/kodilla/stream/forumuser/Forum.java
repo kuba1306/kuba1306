@@ -9,7 +9,7 @@ public final class Forum {
     private final List<ForumUser> theForumUserList = new ArrayList<>();
 
     public Forum() {
-        theForumUserList.add(new ForumUser(1, "Alex", 'm', LocalDate.of(1999,12,15) , 15));
+        theForumUserList.add(new ForumUser(1, "Alex", 'm', LocalDate.of(2003,10,15) , 15));
         theForumUserList.add(new ForumUser(2,"Arek",'m', LocalDate.of(2008,10,12), 65));
         theForumUserList.add(new ForumUser(3,"Max",'m', LocalDate.of(1977,4,18),33));
         theForumUserList.add(new ForumUser(4,"Dawid",'m',LocalDate.of(1949, 1,1),56));
@@ -21,4 +21,5 @@ public final class Forum {
     public List<ForumUser> getList() {
         return new ArrayList<>(theForumUserList);
     }
+
 }

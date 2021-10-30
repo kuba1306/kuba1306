@@ -13,7 +13,7 @@ public class FirstChallenge {
         FirstChallenge firstChallenge = new FirstChallenge();
 
         try {
-            firstChallenge.divide(3, 1);
+            firstChallenge.divide(3, 0);
         } catch (ArithmeticException e) {
             System.out.println("nie przez 0");
         } finally {
