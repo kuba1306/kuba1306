@@ -57,7 +57,7 @@ class WeatherForecastTestSuite {
             entry.getValue();
             sumTemp2 += entry.getValue();
         }
-        double average2 = (sumTemp2 + 5)/ quantityOfSensors;
+        double average2 = (sumTemp2 + 5) / quantityOfSensors;
         //When
         double counter = weatherForecast.calculateAverageTemperature();
 

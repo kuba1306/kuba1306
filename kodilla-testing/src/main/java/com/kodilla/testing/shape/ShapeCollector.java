@@ -33,7 +33,7 @@ public class ShapeCollector {
     }
 
     public void showFigures() {
-        for (int i=0; i<shapeCollection.size(); i++) {
+        for (int i = 0; i < shapeCollection.size(); i++) {
             System.out.println(i);
         }
     }

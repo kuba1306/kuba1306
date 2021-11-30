@@ -10,9 +10,11 @@ public final class World {
     public World(List<Continent> continentList) {
         this.continentList = continentList;
     }
+
     public void addContinent(Continent continent) {
         continentList.add(continent);
     }
+
     public void removeContinent(Continent continent) {
         continentList.remove(continent);
     }

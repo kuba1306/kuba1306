@@ -9,9 +9,11 @@ public final class User {
         this.username = username;
         this.realName = realName;
     }
+
     public String getUsername() {
         return username;
     }
+
     public String getRealName() {
         return realName;
     }
@@ -22,6 +24,7 @@ public final class User {
                 "username='" + username + '\'' +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

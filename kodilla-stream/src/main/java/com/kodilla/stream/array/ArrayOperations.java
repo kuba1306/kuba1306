@@ -10,10 +10,10 @@ public interface ArrayOperations {
 
     public static OptionalDouble getAverage(final int[] numbers) {
         IntStream.range(0, numbers.length)
-                .forEach(n -> System.out.print(numbers[n]+","+" "));
+                .forEach(n -> System.out.print(numbers[n] + "," + " "));
         System.out.println(" ");
         System.out.println("And average equals --------> " + " " + Arrays.stream(numbers).average());
 
-       return Arrays.stream(numbers).average();
+        return Arrays.stream(numbers).average();
     }
 }

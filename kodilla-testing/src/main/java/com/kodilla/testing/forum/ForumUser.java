@@ -4,6 +4,7 @@ import java.util.ArrayList;                                    // [2]
 import java.util.LinkedList;                                   // [3]
 
 import java.util.List;                                         // [4]
+
 public class ForumUser {                                       // [5]
 
     private String name;                                        // [6]

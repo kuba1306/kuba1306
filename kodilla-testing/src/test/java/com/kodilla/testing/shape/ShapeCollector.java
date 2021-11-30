@@ -36,7 +36,7 @@ public class ShapeCollector {
             List<Shape> shapeCollection = new ArrayList<Shape>();
 
             //When
-            shapeCollection.add(new Square("square1",7));
+            shapeCollection.add(new Square("square1", 7));
 
             //Then
             Assertions.assertEquals(1, shapeCollection.size());
@@ -46,7 +46,7 @@ public class ShapeCollector {
         void TestRemoveSquare() {
             //Given
             List<Shape> shapeCollection = new ArrayList<Shape>();
-            shapeCollection.add(new Square("square1",7));
+            shapeCollection.add(new Square("square1", 7));
 
             //When
             shapeCollection.remove(0);
@@ -94,7 +94,7 @@ public class ShapeCollector {
             List<Shape> shapeCollection = new ArrayList<Shape>();
 
             //When
-            shapeCollection.add(new Circle("circle1",7));
+            shapeCollection.add(new Circle("circle1", 7));
 
             //Then
             Assertions.assertEquals(1, shapeCollection.size());
@@ -105,7 +105,7 @@ public class ShapeCollector {
         void TestRemoveCircle() {
             //Given
             List<Shape> shapeCollection = new ArrayList<Shape>();
-            shapeCollection.add(new Circle("circle1",7));
+            shapeCollection.add(new Circle("circle1", 7));
 
             //When
             shapeCollection.remove(0);
@@ -118,7 +118,7 @@ public class ShapeCollector {
         @Test
         void getCircleField() {
             //Given
-            Circle circle5 = new Circle("circle5",8);
+            Circle circle5 = new Circle("circle5", 8);
 
             //When
             circle5.getField();
@@ -132,7 +132,7 @@ public class ShapeCollector {
         @Test
         void getCircleName() {
             //Given
-            Circle circle5 = new Circle("circle5",8);
+            Circle circle5 = new Circle("circle5", 8);
 
             //When
             circle5.getShapeName();
@@ -153,17 +153,18 @@ public class ShapeCollector {
             List<Shape> shapeCollection = new ArrayList<Shape>();
 
             //When
-            shapeCollection.add(new Triangle("triangle1",7, 9));
+            shapeCollection.add(new Triangle("triangle1", 7, 9));
 
             //Then
             Assertions.assertEquals(1, shapeCollection.size());
 
         }
+
         @Test
         void TestRemoveTriangle() {
             //Given
             List<Shape> shapeCollection = new ArrayList<Shape>();
-            shapeCollection.add(new Triangle("triangle1",7, 9));
+            shapeCollection.add(new Triangle("triangle1", 7, 9));
 
             //When
             shapeCollection.remove(0);
@@ -171,10 +172,11 @@ public class ShapeCollector {
             //Then
             Assertions.assertEquals(0, shapeCollection.size());
         }
+
         @Test
         void getTriangleField() {
             //Given
-            Triangle triangle2 = new Triangle("triangle",5,5);
+            Triangle triangle2 = new Triangle("triangle", 5, 5);
 
             //When
             triangle2.getField();
@@ -183,10 +185,11 @@ public class ShapeCollector {
             Assertions.assertEquals(12.5, triangle2.getField());
 
         }
+
         @Test
         void getTriangleName() {
             //Given
-            Triangle triangle2 = new Triangle("triangle",5,5);
+            Triangle triangle2 = new Triangle("triangle", 5, 5);
 
             //When
             triangle2.getShapeName();
