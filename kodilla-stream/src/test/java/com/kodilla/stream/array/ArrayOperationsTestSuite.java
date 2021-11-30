@@ -13,7 +13,7 @@ class ArrayOperationsTestSuite {
     void testGetAverage() {
 
         //Given
-        int[] numbers = {5, 5, 5, 5, 5, 3, 4, 5, 3, 2, 3, 4, 5, 6, 3, 2, 4, 2, 1, 6};
+        int[] numbers = {4, 6, 5, 5, 5, 3, 4, 5, 3, 2, 3, 4, 5, 6, 3, 2, 4, 2, 1, 6};
 
         //When
         OptionalDouble expected = OptionalDouble.of(3.9);
