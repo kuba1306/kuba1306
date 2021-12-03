@@ -19,7 +19,6 @@ public final class Board {
     public boolean removeTaskList(TaskList taskList) {
         return taskLists.remove(taskList);
     }
-
     public List<TaskList> getTaskLists() {
         return new ArrayList<>(taskLists);
     }
