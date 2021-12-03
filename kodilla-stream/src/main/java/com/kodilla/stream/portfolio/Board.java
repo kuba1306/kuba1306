@@ -34,4 +34,6 @@ public final class Board {
                 "taskLists=" + taskLists + "\n" +
                 '}';
     }
+
+
 }
