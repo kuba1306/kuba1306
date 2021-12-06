@@ -8,4 +8,14 @@ public class SecondChallenge {
         }
         return "Done!";
     }
+
+    public static void main(String[] args) {
+        SecondChallenge secondChallenge = new SecondChallenge();
+        try {
+            secondChallenge.probablyIWillThrowException(5, 7);
+        } catch (Exception e) {
+        }
+        finally{
+        }
+    }
 }
