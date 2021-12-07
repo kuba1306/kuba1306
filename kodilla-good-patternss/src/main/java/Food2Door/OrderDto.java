@@ -24,7 +24,5 @@ public class OrderDto {
         return isComplited; }
 
     public void process() {
-
     }
-
 }

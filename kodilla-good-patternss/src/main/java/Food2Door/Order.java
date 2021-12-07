@@ -6,6 +6,5 @@ public class Order {
     private Realization realization;
 
     public void orderRequest(final Product product, final Provider provider) {
-
     }
 }
