@@ -2,11 +2,13 @@ package flights;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FlightRequest {
 
-    public static List<String> requestOriginAllFlights() {
+    public List<String> requestOriginAllFlights(String originAirport) {
         final List<Flight> theList = new ArrayList<>();
+        List<String> origins = new ArrayList<>();
 
         theList.add(new Flight("POZ", "WAW"));
         theList.add(new Flight("POZ", "KRK"));
@@ -28,8 +30,11 @@ public class FlightRequest {
         theList.add(new Flight("BER", "PTY"));
         theList.add(new Flight("BER", "BUD"));
 
+        origins = theList.stream()
+                .filter(flight -> flight.getOriginAirport().startsWith(originAirport))
+                .map(Flight::getDestination)
+                .collect(Collectors.toList());
 
-
-        return new ArrayList<>(theList);
+        return origins;
     }
 }
