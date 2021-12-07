@@ -20,7 +20,7 @@ public class FlightRequest {
         DataBase data1 = new DataBase();
         List<String> destiny = data1.addingDataToList().stream()
                 .filter(flight -> flight.getDestination().startsWith(destination))
-                .map(Flight::getDestination)
+                .map(Flight::getOriginAirport)
                 .collect(Collectors.toList());
 
         return destiny;
