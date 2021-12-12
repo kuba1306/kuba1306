@@ -2,28 +2,26 @@ package com.kodilla.good.patterns.challenges;
 
 class ProductOrderService {
 
-    private InformationService informationService;
     private DeliveryService deliveryService;
+    private InformationService informationService;
+
     private PaymentMethod paymentMethod;
 
 
-    public ProductOrderService(final InformationService informationService,
-                          final DeliveryService deliveryservice,
-                          final PaymentMethod paymentMethod) {
+    public ProductOrderService(final DeliveryService deliveryService, final InformationService informationService, final PaymentMethod paymentMethod) {
         this.informationService = informationService;
-        this.deliveryService = deliveryservice;
+        this.deliveryService = deliveryService;
         this.paymentMethod = paymentMethod;
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isPaid = paymentMethod.isPaid(orderRequest.getUser(), orderRequest.getOrdered(), orderRequest.getEstimatedDeliveryTime());
+        boolean isPaid = paymentMethod.isPaid(orderRequest.getUser(), orderRequest.getOrdered(), orderRequest.getEstimatedDeliveryTime(), orderRequest.isCashOnAccount());
         if (isPaid) {
             informationService.inform(orderRequest.getUser());
-            deliveryService.delivery(orderRequest.getUser(), orderRequest.getOrdered(), orderRequest.getEstimatedDeliveryTime());
+            deliveryService.isDelivered(orderRequest.getUser(), orderRequest.getOrdered(), orderRequest.getEstimatedDeliveryTime());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
             return new OrderDto(orderRequest.getUser(), false);
         }
     }
-
 }

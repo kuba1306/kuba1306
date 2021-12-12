@@ -13,6 +13,4 @@ class FileReaderTestSuite {
         // when & then
         assertDoesNotThrow(() -> fileReader.readFile());
     }
-
-
 }
