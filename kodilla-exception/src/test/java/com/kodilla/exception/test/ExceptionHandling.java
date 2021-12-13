@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ExceptionHandlingTest {
+public class ExceptionHandling {
 
     private SecondChallenge secondChallenge = new SecondChallenge();
 
