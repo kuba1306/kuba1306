@@ -23,4 +23,13 @@ public class FlightService {
 
         return destiny;
     }
+
+    public List<Flight> requestFlightWithConnection(String originAirport, String destination) {
+        DataBase data1 = new DataBase();
+        List<Flight> flightWithConnection = data1.addingDataToList().stream()
+                .filter(flight -> flight.getOriginAirport().equals(originAirport) && flight.getDestination().equals(destination))
+                .collect(Collectors.toList());
+
+        return flightWithConnection;
+    }
 }
