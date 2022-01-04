@@ -18,5 +18,7 @@ public class BookLibrary {
         // temporary returning list of one book
         return bookList;
     }
-    //...
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
+    }
 }
