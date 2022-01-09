@@ -16,7 +16,7 @@ public class BookLibraryTestSuite {
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<>();
         for (int n = 1; n <= booksQuantity; n++) {
-            Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
+            Book theBook = new Book("Titlle " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
         }
         return resultList;
