@@ -1,12 +1,14 @@
 package com.kodilla.patterns.singleton;
 
-public class Logger {
+public enum Logger {
 
-    private String lastLog = "";
+    INSTANCE;
 
-    public void log(String log) {
+    private String lastLog = "byly sobie pieski 2";
+
+    public void log(final String log) {
         lastLog = log;
-        System.out.println("Log: [" + log + "]");
+        System.out.println(lastLog);
     }
 
     public String getLastLog() {
