@@ -31,7 +31,7 @@ class TaskFactoryTestSuite {
 
 
     @Test
-    void testFactoryRectangle() {
+    void testFactoryShopingTask() {
         //Given
         TaskFactory factory = new TaskFactory();
         //When
