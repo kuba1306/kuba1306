@@ -1,41 +1,42 @@
 package com.kodilla.patterns.factory;
 
+import com.kodilla.patterns.factory.tasks.DrivingTask;
+import com.kodilla.patterns.factory.tasks.Task;
+import com.kodilla.patterns.factory.tasks.TaskFactory;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ShapeFactoryTestSuite {
+class TaskFactoryTestSuite {
 
     @Test
-    void testFactoryCircle() {
+    void testFactoryDrivingTask() {
         //Given
-        ShapeFactory factory = new ShapeFactory();
+        TaskFactory factory = new TaskFactory();
         //When
-        Shape circle = factory.makeShape(ShapeFactory.CIRCLE);
+        Task drivingTask = factory.setTask(TaskFactory.DrivingTask);
         //Then
-        assertEquals(Math.PI * Math.pow(4.50, 2.0), circle.getArea(), 0);
-        assertEquals("The rounded circle", circle.getName());
+        assertEquals("Next holidays", drivingTask.getTaskName());
     }
 
     @Test
-    void testFactorySquare() {
+    void testFactoryPaitingTask() {
         //Given
-        ShapeFactory factory = new ShapeFactory();
+        TaskFactory factory = new TaskFactory();
         //When
-        Shape square = factory.makeShape(ShapeFactory.SQUARE);
+        Task paintingTask = factory.setTask(TaskFactory.PaintingTask);
         //Then
-        assertEquals(28.0, square.getCircumference(), 0);
-        assertEquals("The angular square", square.getName());
+        assertEquals("Paint your living room", paintingTask.getTaskName());
     }
+
 
     @Test
     void testFactoryRectangle() {
         //Given
-        ShapeFactory factory = new ShapeFactory();
+        TaskFactory factory = new TaskFactory();
         //When
-        Shape rectangle = factory.makeShape(ShapeFactory.RECTANGLE);
+        Task shopingTask = factory.setTask(TaskFactory.ShoppingTask);
         //Then
-        assertEquals(37.50, rectangle.getArea(), 0);
-        assertEquals("The long rectangle", rectangle.getName());
+        assertEquals("Shooping in grocer", shopingTask.getTaskName());
     }
 }
