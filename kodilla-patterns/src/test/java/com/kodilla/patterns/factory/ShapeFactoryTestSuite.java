@@ -1,42 +1,41 @@
 package com.kodilla.patterns.factory;
 
-import com.kodilla.patterns.factory.tasks.DrivingTask;
-import com.kodilla.patterns.factory.tasks.Task;
-import com.kodilla.patterns.factory.tasks.TaskFactory;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TaskFactoryTestSuite {
+class ShapeFactoryTestSuite {
 
     @Test
-    void testFactoryDrivingTask() {
+    void testFactoryCircle() {
         //Given
-        TaskFactory factory = new TaskFactory();
+        ShapeFactory factory = new ShapeFactory();
         //When
-        Task drivingTask = factory.setTask(TaskFactory.DrivingTask);
+        Shape circle = factory.makeShape(ShapeFactory.CIRCLE);
         //Then
-        assertEquals("Next holidays", drivingTask.getTaskName());
+        assertEquals(Math.PI * Math.pow(4.50, 2.0), circle.getArea(), 0);
+        assertEquals("The rounded circle", circle.getName());
     }
 
     @Test
-    void testFactoryPaitingTask() {
+    void testFactorySquare() {
         //Given
-        TaskFactory factory = new TaskFactory();
+        ShapeFactory factory = new ShapeFactory();
         //When
-        Task paintingTask = factory.setTask(TaskFactory.PaintingTask);
+        Shape square = factory.makeShape(ShapeFactory.SQUARE);
         //Then
-        assertEquals("Paint your living room", paintingTask.getTaskName());
+        assertEquals(28.0, square.getCircumference(), 0);
+        assertEquals("The angular square", square.getName());
     }
 
-
     @Test
-    void testFactoryShopingTask() {
+    void testFactoryRectangle() {
         //Given
-        TaskFactory factory = new TaskFactory();
+        ShapeFactory factory = new ShapeFactory();
         //When
-        Task shopingTask = factory.setTask(TaskFactory.ShoppingTask);
+        Shape rectangle = factory.makeShape(ShapeFactory.RECTANGLE);
         //Then
-        assertEquals("Shooping in grocer", shopingTask.getTaskName());
+        assertEquals(37.50, rectangle.getArea(), 0);
+        assertEquals("The long rectangle", rectangle.getName());
     }
 }
