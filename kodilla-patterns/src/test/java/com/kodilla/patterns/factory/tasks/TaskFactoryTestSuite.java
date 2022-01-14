@@ -1,8 +1,4 @@
 package com.kodilla.patterns.factory.tasks;
-
-import com.kodilla.patterns.factory.tasks.DrivingTask;
-import com.kodilla.patterns.factory.tasks.Task;
-import com.kodilla.patterns.factory.tasks.TaskFactory;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
