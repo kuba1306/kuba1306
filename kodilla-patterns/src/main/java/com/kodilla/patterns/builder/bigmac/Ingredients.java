@@ -20,8 +20,7 @@ public class Ingredients {
             throw new IllegalStateException("You can add only: LETTUCE, ONION, BACON, CUCUMBER, PEPPER, CHEESE, MUSHROOMS or SHRIMPS");
         }
     }
-
-    public String getIngredient() {
+    public String getIngredients() {
         return ingredient;
     }
 }

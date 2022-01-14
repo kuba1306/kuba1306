@@ -3,9 +3,9 @@ package com.kodilla.patterns.builder.bigmac;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Bigmac {
+public class Bigmac {
 
-    private String bottom;
+    private final String bottom;
     private final String sauce;
     private final int burgers;
     private List<String> ingredients = new ArrayList<>();
@@ -14,31 +14,33 @@ public final class Bigmac {
         this.bottom = bottom;
         this.sauce = sauce;
         this.burgers = burgers;
-        this.ingredients = ingredients;
+        this.ingredients = new ArrayList<>(ingredients);
     }
 
     public String getBottom() {
         return bottom;
     }
 
-    public String getPlayerOne() {
-        return playerOne;
+    public List<String> getIngredients() {
+        return ingredients;
     }
 
-    public String getPlayerTwo() {
-        return playerTwo;
+    public String getSauce() {
+        return sauce;
     }
 
-
+    public int getBurgers() {
+        return burgers;
+    }
 
     public static class BigmacBuilder {
-        private String bun;
-        private String sauce;
+        private String bottom = "";
+        private String sauce = "";
         private int burgers;
         private List<String> ingredients = new ArrayList<>();
 
-        public BigmacBuilder bun(String bun) {
-            this.bun = bun;
+        public BigmacBuilder bun(String bottom) {
+            this.bottom = bottom;
             return this;
         }
 
@@ -58,37 +60,14 @@ public final class Bigmac {
         }
 
         public Bigmac build() {
-            return new Bigmac(bun, sauce, ingredients, burgers);
+            return new Bigmac(bottom, sauce, burgers, ingredients);
         }
-    }
-
-    private Bigmac(final String bun, final String sauce, List<String> ingredients, final int burgers) {
-        this.bun = bun;
-        this.sauce = sauce;
-        this.ingredients = ingredients;
-        this.burgers = burgers;
-    }
-
-    public String getBun() {
-        return bun;
-    }
-
-    public String getSauce() {
-        return sauce;
-    }
-
-    public int getBurgers() {
-        return burgers;
-    }
-
-    public List<String> getIngredients() {
-        return ingredients;
     }
 
     @Override
     public String toString() {
         return "Bigmac{" +
-                "bun='" + bun + '\'' +
+                "bun='" + bottom + '\'' +
                 ", sauce='" + sauce + '\'' +
                 ", burgers=" + burgers +
                 ", ingredients=" + ingredients +
