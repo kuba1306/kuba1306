@@ -1,21 +1,10 @@
 package com.kodilla.testing.forum.statistics;
-
-import com.kodilla.testing.forum.ForumComment;
-import com.kodilla.testing.forum.ForumPost;
-import com.kodilla.testing.forum.ForumUser;
-import com.kodilla.testing.library.Book;
-import com.kodilla.testing.library.BookLibrary;
-import com.kodilla.testing.library.LibraryDatabase;
-import com.kodilla.testing.library.LibraryUser;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -27,13 +16,16 @@ public class StatisticTestSuite {
 
     private static int testCounter = 0;
 
-    private List<String> generateListOfUsers (int numberOfUsers) {
+    private List<String> generateListOfUsers (int usersListQuantity) {
         List<String> listOfUsers = new ArrayList<>();
-        for (int n = 1; n <= numberOfUsers; n++) {
+        for (int n = 1; n <= usersListQuantity; n++) {
             listOfUsers.add("User" + n);
         }
         return listOfUsers;
     }
+
+    @Mock
+    private Statistics statisticsMock;
 
 
     @BeforeAll
@@ -46,8 +38,7 @@ public class StatisticTestSuite {
         System.out.println("All tests are finished.");
     }
 
-    @Mock
-    private Statistics statisticsMock;
+
 
     @BeforeEach
     public void beforeEveryTest() {

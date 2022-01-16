@@ -40,7 +40,6 @@ public class StatisticCalculator {
         postQuantity = statistics.postsCount();
         commentsQuantity = statistics.commentsCount();
 
-        averageCommentsNumberPerPost = (double) commentsQuantity / (double) postQuantity;
         if (usersListQuantity == 0) {
             averageCommentsNumberPerUser = 0.0;
             averagePostsNumberPerUser = 0.0;
@@ -48,7 +47,6 @@ public class StatisticCalculator {
                 averagePostsNumberPerUser = (double) postQuantity / (double) usersListQuantity;
                 averageCommentsNumberPerUser = (double) commentsQuantity / (double) usersListQuantity;
         }
-
         if (postQuantity == 0) {
             averageCommentsNumberPerPost = 0.0;
         } else {
