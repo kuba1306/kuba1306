@@ -10,7 +10,7 @@ public class ForumUser {                                       // [5]
     private String name;                                        // [6]
     private String realName;                                    // [7]
     private List<ForumPost> posts = new ArrayList<>();          // [8]
-    private List<ForumComment> comments = new LinkedList<>();   // [9]
+    private List<ForumComment> comments = new LinkedList<>();  // [9]
 
     public ForumUser(String name, String realName) {            // [10]
         //name visible on forum
