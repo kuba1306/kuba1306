@@ -29,6 +29,7 @@ public class App {
             System.out.println("From:" + chosenOriginCity + " " + "You can fly to:" + " " + chosenDestinationCity + " " + "with connection" + result3);
         } else {
             System.out.println("we didn't find this any flight with connection ");
+
         }
     }
 }
