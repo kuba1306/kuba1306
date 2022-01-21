@@ -6,10 +6,7 @@ public class RpsRunner {
     public static void main(String[] args) {
 
         Display starter = new Display();
-
-        starter.displayMainMenu();
-        starter.afterMainMEnuDisplay();
-
+        starter.starter();
     }
 }
 

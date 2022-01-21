@@ -15,12 +15,15 @@ public class Display {
     int roundNumber = 1;
     int howManyWins;
 
-    public void displayMainMenu() {
+    public void firstMenu() {
         System.out.println("Welcome, in Rock, Paper, Scissors game");
         System.out.println("What's your name?");
         yourName = scanner.nextLine();
         System.out.println("Hello " + yourName + " " + "For how many wins do you want to play?");
         howManyWins = scanner.nextInt();
+    }
+
+    public void secondMenuInstructions() {
         System.out.println("Good luck you decided to play for: " + howManyWins + " wins");
         System.out.println("What do you want to do?, please use your keyboard to choose one option");
         System.out.println("1 - Rock");
@@ -29,41 +32,40 @@ public class Display {
         System.out.println("x - close window");
         System.out.println("n - new game");
         choice = scanner2.nextLine();
-
     }
 
     public void afterMainMEnuDisplay() {
-
-
-
         if (choice.equals("x")) {
             System.out.println("Do you really want to finish game? y/n");
             confirmation = scanner.nextLine();
             if (confirmation.equals("y")) {
                 System.out.println("See you next time");
+                return;
             } else if (confirmation.equals("n")) {
-                displayMainMenu();
+                firstMenu();
             } else {
                 System.out.println("Wrong choice try again");
-                displayMainMenu();
+                secondMenuInstructions();
             }
-        } else if (choice.equals("n")) {
+        } if (choice.equals("n")) {
             System.out.println("Do you really want to finish game and start new one? y/n");
             confirmation = scanner.nextLine();
             if (confirmation.equals("y")) {
                 System.out.println("OK let's start again");
+                yourScore = 0;
+                compScore = 0;
+                roundNumber = 1;
+
             } else if (confirmation.equals("n")) {
-                displayMainMenu();
+                firstMenu();
             } else {
                 System.out.println("Wrong choice try again");
-                displayMainMenu();
+                firstMenu();
             }
         } else {
-
             comparator();
             System.out.println("Round number: " + roundNumber + " ||||| your score " + yourScore + " ||||||  -  comp score: " + compScore);
             System.out.println("You're playing to " + howManyWins + "  wins");
-            roundNumber++;
         }
     }
 
@@ -96,11 +98,24 @@ public class Display {
         }
     }
 
-    public void finalScoreChecker() {
-        if (yourScore == howManyWins) {
+    public boolean isTheEnd() {
+
+        if (yourScore < howManyWins && compScore < howManyWins) {
+            secondMenuInstructions();
+            afterMainMEnuDisplay();
+            roundNumber++;
+            return true;
+        } else if (yourScore == howManyWins) {
             System.out.println("Congratulations you Won this battle " + yourScore + " : " + compScore);
-        } if (compScore == howManyWins) {
+            return false;
+        } else if (compScore == howManyWins) {
             System.out.println("Unfortunately you lost this battle " + yourScore + " : " + compScore);
         }
+        return false;
+    }
+
+    public void starter() {
+        firstMenu();
+        while (isTheEnd());
     }
 }
