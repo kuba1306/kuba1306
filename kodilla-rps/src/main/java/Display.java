@@ -36,20 +36,20 @@ public class Display {
 
     public void afterMainMEnuDisplay() {
         if (choice.equals("x")) {
-            System.out.println("Do you really want to finish game? y/n");
-            confirmation = scanner.nextLine();
+            System.out.println("Do you really want to finish game? y/n?");
+            confirmation = scanner2.nextLine();
             if (confirmation.equals("y")) {
                 System.out.println("See you next time");
-                return;
+
             } else if (confirmation.equals("n")) {
-                firstMenu();
+                return;
             } else {
                 System.out.println("Wrong choice try again");
                 secondMenuInstructions();
             }
         } if (choice.equals("n")) {
-            System.out.println("Do you really want to finish game and start new one? y/n");
-            confirmation = scanner.nextLine();
+            System.out.println("Do you really want to finish this game and start new one? y/n");
+            confirmation = scanner2.nextLine();
             if (confirmation.equals("y")) {
                 System.out.println("OK let's start again");
                 yourScore = 0;
@@ -57,7 +57,7 @@ public class Display {
                 roundNumber = 1;
 
             } else if (confirmation.equals("n")) {
-                firstMenu();
+                return;
             } else {
                 System.out.println("Wrong choice try again");
                 firstMenu();
