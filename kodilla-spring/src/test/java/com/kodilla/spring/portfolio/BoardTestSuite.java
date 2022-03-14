@@ -1,16 +1,25 @@
 package com.kodilla.spring.portfolio;
 
-import com.kodilla.spring.calculator.Calculator;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootTest
 public class BoardTestSuite {
-}
-
-    @Autowired
-    private Calculator calculator;
 
     @Test
-    void addTwoNumbers()
+    void testTaskAdd() {
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
+        Board board = context.getBean(Board.class);
+        //When
+        board.doneList.addTask("1");
+        board.inProgressList.addTask("2");
+        board.toDoList.addTask("3");
+        //Then
+        board.doneList.showTasks();
+        board.inProgressList.showTasks();
+        board.toDoList.showTasks();
+    }
+}
