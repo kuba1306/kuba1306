@@ -53,7 +53,7 @@ public class OrderFacade {
                 wasError = true;
                 throw new OrderProcessingException(OrderProcessingException.ERR_SUBMITTING_ERROR);
             }
-            LOGGER.info("Order " + orderId + " submitted");
+            LOGGER.info("Order number:" + orderId + " submitted");
         } finally {
             if (wasError) {
                 LOGGER.info("Cancelling order " + orderId);
