@@ -19,7 +19,7 @@ public class App {
 
         List<Flight> result2 = request.requestDestinationAllFlights(chosenDestinationCity);
         if (result2.size() > 0) {
-            System.out.println("To:" + chosenDestinationCity + " " + "we found this direct connections" + " " + result2);
+            System.out.println("To:" + chosenDestinationCity + " " + "we found this direcct connections" + " " + result2);
         } else {
             System.out.println("we didn't find this direct connections ");
         }
