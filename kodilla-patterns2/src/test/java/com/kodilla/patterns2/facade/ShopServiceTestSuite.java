@@ -11,12 +11,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.math.BigDecimal;
 
 @SpringBootTest
-class ShopServiceTestSuite {
+public class ShopServiceTestSuite {
+
+    @Autowired
+    private OrderFacade orderFacade;
 
     @Autowired
     private ShopService shopService;
-    @Autowired
-    private OrderFacade orderFacade;
 
     @Test
     void testShopServiceSubmitOrder() {
@@ -75,4 +76,5 @@ class ShopServiceTestSuite {
             // business exception - should be handled in real application
         }
     }
+
 }

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-class CalculatorTestSuite {
+public class CalculatorTestSuite {
 
     private static final Logger LOGGER =
             LoggerFactory.getLogger(CalculatorTestSuite.class);

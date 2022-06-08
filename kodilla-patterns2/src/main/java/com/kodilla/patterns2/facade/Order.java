@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
+
     private ProductService productService;
     private final List<Item> items = new ArrayList<>();
     private final Long orderId;
@@ -29,21 +30,47 @@ public class Order {
         return sum;
     }
 
-    public List<Item> getItems() { return items; }
+    public ProductService getProductService() {
+        return productService;
+    }
 
-    public Long getOrderId() { return orderId; }
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
 
-    public Long getUserId() { return userId; }
+    public List<Item> getItems() {
+        return items;
+    }
 
-    public boolean isPaid() { return isPaid; }
+    public Long getOrderId() {
+        return orderId;
+    }
 
-    public void setPaid(boolean paid) { isPaid = paid; }
+    public Long getUserId() {
+        return userId;
+    }
 
-    public boolean isVerified() { return isVerified; }
+    public boolean isPaid() {
+        return isPaid;
+    }
 
-    public void setVerified(boolean verified) { isVerified = verified; }
+    public void setPaid(boolean paid) {
+        isPaid = paid;
+    }
 
-    public boolean isSubmitted() { return isSubmitted; }
+    public boolean isVerified() {
+        return isVerified;
+    }
 
-    public void setSubmitted(boolean submitted) { isSubmitted = submitted; }
+    public void setVerified(boolean verified) {
+        isVerified = verified;
+    }
+
+    public boolean isSubmitted() {
+        return isSubmitted;
+    }
+
+    public void setSubmitted(boolean submitted) {
+        isSubmitted = submitted;
+    }
 }

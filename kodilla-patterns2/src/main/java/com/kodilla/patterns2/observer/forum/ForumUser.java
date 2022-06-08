@@ -1,6 +1,7 @@
 package com.kodilla.patterns2.observer.forum;
 
 public class ForumUser implements Observer {
+
     private final String username;
     private int updateCount;
 
@@ -22,4 +23,5 @@ public class ForumUser implements Observer {
     public int getUpdateCount() {
         return updateCount;
     }
+
 }

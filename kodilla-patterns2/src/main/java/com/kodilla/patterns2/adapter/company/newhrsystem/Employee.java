@@ -1,9 +1,10 @@
-
 package com.kodilla.patterns2.adapter.company.newhrsystem;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Employee {
+
     final private String peselId;
     final private String firstname;
     final private String lastname;
@@ -14,10 +15,6 @@ public class Employee {
         this.firstname = firstname;
         this.lastname = lastname;
         this.baseSalary = baseSalary;
-    }
-
-    public String getPeselId() {
-        return peselId;
     }
 
     public String getFirstname() {
@@ -32,6 +29,10 @@ public class Employee {
         return baseSalary;
     }
 
+    public String getPeselId() {
+        return peselId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,18 +40,25 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-        return peselId != null ? peselId.equals(employee.peselId) : employee.peselId == null;
+        if (!Objects.equals(peselId, employee.peselId)) return false;
+        if (!Objects.equals(firstname, employee.firstname)) return false;
+        if (!Objects.equals(lastname, employee.lastname)) return false;
+        return Objects.equals(baseSalary, employee.baseSalary);
     }
 
     @Override
     public int hashCode() {
-        return peselId != null ? peselId.hashCode() : 0;
+        int result = peselId != null ? peselId.hashCode() : 0;
+        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        result = 31 * result + (baseSalary != null ? baseSalary.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "peselId='" + peselId + '\'' +
+                "peselId=" + peselId + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", baseSalary=" + baseSalary +
