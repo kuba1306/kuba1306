@@ -1,25 +1,30 @@
 package com.kodilla.spring.portfolio;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 public class BoardTestSuite {
+
+    @Autowired
+    private Board board;
 
     @Test
     void testTaskAdd() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
-        Board board = context.getBean(Board.class);
         //When
-        board.doneList.addTask("zrobione");
-        board.inProgressList.addTask("w trakcie roboty");
-        board.toDoList.addTask("do wykonania");
+        board.getToDoList().addTask("HQLs for analysis");
+        board.getInProgressList().addTask("Optimize searching");
+        board.getDoneList().addTask("Use Streams");
         //Then
-        board.doneList.showTasks();
-        board.inProgressList.showTasks();
-        board.toDoList.showTasks();
+        assertEquals("HQLs for analysis", board.getToDoList().getTasks().get(0));
+        assertEquals("Optimize searching", board.getInProgressList().getTasks().get(0));
+        assertEquals("Use Streams", board.getDoneList().getTasks().get(0));
+
     }
 }
