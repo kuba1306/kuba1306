@@ -1,4 +1,4 @@
-package com.kodilla.testing2.crudapp;
+package com.kodilla.testing2.cruddapp;
 
 import com.kodilla.testing2.config.WebDriverConfig;
 import org.junit.jupiter.api.AfterEach;
@@ -14,7 +14,7 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class CrudAppTestSuite {
+class CrudAppTestSuite {
 
     private static final String BASE_URL = "https://kuba1306.github.io/";
     private WebDriver driver;

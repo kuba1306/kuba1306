@@ -1,12 +1,18 @@
-import java.util.Random;
-import java.util.Scanner;
+package com.kodilla.rps;
+
+import com.kodilla.rps.game.GameSettings;
+import com.kodilla.rps.ui.UICreator;
+import game.RockPaperScissorsGame;
 
 public class RpsRunner {
 
     public static void main(String[] args) {
 
-        Display starter = new Display();
-        starter.starter();
+
+        GameSettings gameSettings = UICreator.enterGameSettings();
+        UICreator.showGameManuals();
+        RockPaperScissorsGame rpsGame = new RockPaperScissorsGame(gameSettings);
+
+        rpsGame.start();
     }
 }
-
