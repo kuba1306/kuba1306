@@ -14,7 +14,7 @@ public class CrudAppTestingApp{
     public static final String XPATH_SELECT = "//select[1]";
 
     public static void main(String[] args) {
-        WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
+        WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
         driver.get("https://kuba1306.github.io/");
 
         WebElement searchField = driver.findElement(By.xpath(XPATH_INPUT));
