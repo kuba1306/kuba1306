@@ -1,4 +1,4 @@
-package com.kodilla.rps;
+
 
 import com.kodilla.rps.game.GameSettings;
 import com.kodilla.rps.ui.UICreator;

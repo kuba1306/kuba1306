@@ -17,7 +17,7 @@ public class FlightStarter {
         FlightSearchEngine flightFinder = new FlightSearchEngine(flightMap);
 
         try {
-            flightFinder.findFlight("LONDON");
+            flightFinder.findFlight("BERLIN");
         } catch (RouteNotFoundException e) {
             System.out.println("We didn't find expected route");
         }

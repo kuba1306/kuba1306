@@ -88,13 +88,13 @@ class CrudAppTestSuite {
         driverTrello.get(TRELLO_URL);
 
         driverTrello.findElement(By.id("user")).sendKeys("jakubpanienski@wp.pl");
-        driverTrello.findElement(By.id("password")).sendKeys("123zxc123");
+        driverTrello.findElement(By.id("password")).sendKeys("Topi2208");
         WebElement el = driverTrello.findElement(By.id("login"));
         el.submit();
 
         Thread.sleep(4000);
 
-        driverTrello.findElement(By.id("password")).sendKeys("123zxc123");
+        driverTrello.findElement(By.id("password")).sendKeys("Topi2208");
         driverTrello.findElement(By.id("login-submit")).submit();
 
         Thread.sleep(4000);
