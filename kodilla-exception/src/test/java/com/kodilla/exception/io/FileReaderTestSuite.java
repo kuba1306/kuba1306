@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FileReaderTestSuite {
 
     @Test
-    void testReadFile() {
+   void testReadFile() {
         // given
         FileReader fileReader = new FileReader();
         // when & then

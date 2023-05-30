@@ -1,8 +1,6 @@
 package com.kodilla.testing.collection;
 
-import org.junit.Test;
 import org.junit.jupiter.api.*;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -44,7 +42,6 @@ public class CollectionTestSuite {
         result = numbers.isEmpty();
 
         //Then
-
         Assertions.assertTrue(result);
     }
 
